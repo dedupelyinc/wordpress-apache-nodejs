@@ -35,7 +35,10 @@ ENV APACHE_PID_FILE /var/run/apache2.pid
 ENV APACHE_RUN_DIR /var/run/apache2
 ENV APACHE_LOCK_DIR /var/lock/apache2
 
+COPY ./htaccess.txt /htaccess.txt
+
 RUN mkdir -p /var/lock/apache2
+RUN cat /htaccess.txt > /var/www/html/.htaccess
 RUN chown www-data:www-data -R /var/www/html
 
 EXPOSE 8080
