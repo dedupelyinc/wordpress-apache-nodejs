@@ -11,7 +11,7 @@ RUN echo "Listen 8080" > /etc/apache2/ports.conf
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Install PHP
-RUN apt-get install -y php libapache2-mod-php php-mcrypt php-mysql php-curl php7.0-mbstring
+RUN apt-get install -y php libapache2-mod-php php-mcrypt php-mysql php-curl php7.0-mbstring php7.0-xml
 
 # Install Wordpress
 RUN wget https://wordpress.org/wordpress-4.9.6.tar.gz && \
