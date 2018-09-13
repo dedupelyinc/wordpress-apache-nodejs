@@ -24,9 +24,9 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     aptitude install -y npm && \
     npm install mocha chai ts-node gulp-cli -g
 
-# Install dockerize
-RUN wget https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz && \
-    tar -C /usr/local/bin -xvzf dockerize-linux-amd64-v0.6.1.tar.gz
+RUN apt-get install -y libyaml-dev php-pear php7.0-dev && \
+    pecl install yaml-2.0.0 && \
+    echo "extension=yaml.so" >> /etc/php/7.0/apache2/php.ini
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
