@@ -14,9 +14,9 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN apt-get install -y php libapache2-mod-php php-mcrypt php-mysql php-curl php7.0-mbstring php7.0-xml
 
 # Install Wordpress
-RUN wget https://wordpress.org/wordpress-4.9.6.tar.gz && \
-    tar -xzvf wordpress-4.9.6.tar.gz && mv wordpress /var/www/html && \
-    rm -rf wordpress-4.9.6.tar.gz
+RUN wget https://wordpress.org/wordpress-4.9.8.tar.gz && \
+    tar -xzvf wordpress-4.9.8.tar.gz && mv wordpress /var/www/html && \
+    rm -rf wordpress-4.9.8.tar.gz
 
 # Install nodejs
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
